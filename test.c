@@ -16,5 +16,8 @@ int main(int argc, char **argv) {
     printf("%ld, ", (intptr_t)r->ret);
   }
   printf("\n");
+
+  free(r->data);
+  free(r);
   return 0;
 }
