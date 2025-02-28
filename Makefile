@@ -1,3 +1,3 @@
 
 compile:
-	gcc -o test iterator.c range.c test.c
+	gcc -o test iterator.c range.c number.c test.c
