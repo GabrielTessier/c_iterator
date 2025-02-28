@@ -1,5 +1,5 @@
 
-#include <stdint.h>
+#include <stdlib.h>
 
 #include "iterator.h"
 
@@ -11,5 +11,7 @@ next_return:
   return iterator->ret;
 }
 
-
-
+void free_iterator(iterator_t *iterator) {
+  free(iterator->data);
+  free(iterator);
+}

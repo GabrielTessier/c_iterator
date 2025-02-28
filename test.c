@@ -8,8 +8,10 @@
 #include "range.h"
 
 int main(int argc, char **argv) {
-  if (argc != 3)
+  if (argc != 3) {
+    printf("%s <n1> <n2>\navec n1 < n2\n", argv[0]);
     return 0;
+  }
   int a = atoi(argv[1]);
   int b = atoi(argv[2]);
   printf("range : \n");
@@ -18,9 +20,7 @@ int main(int argc, char **argv) {
     printf("%ld, ", (intptr_t)r->ret);
   }
   printf("\n");
-
-  free(r->data);
-  free(r);
+  free_iterator(r);
 
   printf("number : \n");
   iterator_t *n = number();
@@ -28,7 +28,6 @@ int main(int argc, char **argv) {
     printf("%ld, ", (intptr_t) next(n));
   }
   printf("\n");
-  free(n->data);
-  free(n);
+  free_iterator(n);
   return 0;
 }

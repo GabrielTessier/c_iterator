@@ -15,5 +15,6 @@ struct iterator_s {
 typedef struct iterator_s iterator_t;
 
 void *next(iterator_t *iterator);
+void free_iterator(iterator_t *iterator);
 
 #endif // ITERATOR_H
